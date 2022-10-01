@@ -7,9 +7,10 @@ public class Knight : MonoBehaviour
 
 
     [SerializeField] private float _moveSpeed = 4;
-    [SerializeField] private float _minDistToHit = 5;
+    [SerializeField] private float _minDistToHit = 1;
 
     private Transform _mainCharacter;
+    private bool isStunned = false;
 
     [SerializeField] private float _attackCooldownPerSec = 2;
     private float _attackCooldownTimer = 0;
@@ -33,15 +34,18 @@ public class Knight : MonoBehaviour
 
     public void AttackPlayer()
     {
+
         if (_mainCharacter == null)
         {
             return;
         }
 
-        float dist = Vector3.Distance(_mainCharacter.position, transform.position);
-        transform.LookAt(_mainCharacter);
+        if (isStunned) return;
 
-        if (_minDistToHit < dist)
+        float dist = Vector3.Distance(transform.position, _mainCharacter.position);
+        transform.LookAt(_mainCharacter.transform);
+
+        if (dist < _minDistToHit)
         {
             if (_attackCooldownTimer > _attackCooldownPerSec)
             {
@@ -66,5 +70,15 @@ public class Knight : MonoBehaviour
     {
         // _mainCharacter = GameObject.FindGameObjectWithTag("Animal").transform;
         _mainCharacter.GetComponent<MainCharacter>().TakeDamage(10);
+    }
+
+    public void GetStunned()
+    {
+        isStunned = true;
+    }
+
+    public void RemoveStun()
+    {
+        isStunned = false;
     }
 }
