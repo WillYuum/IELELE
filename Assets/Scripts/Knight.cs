@@ -56,7 +56,7 @@ public class Knight : MonoBehaviour
         }
         else
         {
-            transform.position += transform.forward * _moveSpeed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, _mainCharacter.position, _moveSpeed * Time.deltaTime);
             _attackCooldownTimer = _attackCooldownPerSec;
         }
     }

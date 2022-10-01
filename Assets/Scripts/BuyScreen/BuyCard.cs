@@ -19,8 +19,6 @@ public class BuyCard : MonoBehaviour
     private void Awake()
     {
         Render();
-        UpdateAmountInventory(0);
-
         // _buyButton.Init(OnBuy);
     }
 
@@ -29,11 +27,6 @@ public class BuyCard : MonoBehaviour
         var data = GameManager.instance.ItemsData.GetItems(_item);
         _costIndicator.text = data.Cost.ToString();
         _energyIndicator.text = data.Energy.ToString();
-    }
-
-    public void UpdateAmountInventory(int amount)
-    {
-        _amountInventory.text = amount.ToString();
     }
 
     public void AddClickListeners(Action<int, Items> onBuy)
@@ -45,8 +38,6 @@ public class BuyCard : MonoBehaviour
             var data = GameManager.instance.ItemsData.GetItems(_item);
 
             _onBuy.Invoke(data.Cost, _item);
-
-            UpdateAmountInventory(GameManager.instance.CollectedItems.GetAmount(_item));
         });
     }
 }

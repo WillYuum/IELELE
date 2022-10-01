@@ -1536,6 +1536,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuyCard-Basil
       objectReference: {fileID: 0}
+    - target: {fileID: 1046157413163703452, guid: c30a1f1ad862186429172ace3c7b9a50, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cbe97ac807dbcf5469d78a7c4d7d44a2, type: 3}
     - target: {fileID: 1046157413543389877, guid: c30a1f1ad862186429172ace3c7b9a50, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0.000030517578
@@ -1661,6 +1665,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuyCard-Bow
       objectReference: {fileID: 0}
+    - target: {fileID: 6038500066896880013, guid: 802a027187018c546baecf193cd492f2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 360306eaf2655be40a4e2cdbe195f83a, type: 3}
     - target: {fileID: 6038500067510917028, guid: 802a027187018c546baecf193cd492f2, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0.000030517578
@@ -1710,6 +1718,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 1.4060364
       objectReference: {fileID: 0}
+    - target: {fileID: 7284536760358234346, guid: 078be2dea63f60c40861e0843fc3b675, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2abf52040b088104880aa2dadd2575af, type: 3}
     - target: {fileID: 7284536761760772073, guid: 078be2dea63f60c40861e0843fc3b675, type: 3}
       propertyPath: m_Name
       value: BuyCard-Beads
@@ -1823,6 +1835,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 509915571}
     m_Modifications:
+    - target: {fileID: 7087127515427667061, guid: 452a8b9b1c7b2d14fb31eb754d963ddf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 69c59e61e8bcb2643bad5d66e7031093, type: 3}
     - target: {fileID: 7087127516071119452, guid: 452a8b9b1c7b2d14fb31eb754d963ddf, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0.000030517578
@@ -2044,6 +2060,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 1.4060364
       objectReference: {fileID: 0}
+    - target: {fileID: 3088170391448494146, guid: a2d5db252d4cb08468262c485a1bc9f6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: eb6fcc3e18876354ebc0c883bdb5682f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2d5db252d4cb08468262c485a1bc9f6, type: 3}
 --- !u!114 &5405187444933964380 stripped
@@ -2194,6 +2214,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 509915571}
     m_Modifications:
+    - target: {fileID: 1516609390662881996, guid: 930991a05dd69d849bb18918e014ed91, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9ff85a14aeea22d41956ee2557b62776, type: 3}
     - target: {fileID: 1516609391088706789, guid: 930991a05dd69d849bb18918e014ed91, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0.000030517578
@@ -2415,6 +2439,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 1.4060364
       objectReference: {fileID: 0}
+    - target: {fileID: 5535540696682855609, guid: 1cf5c856c6ee4f54bb2aab0b8d428538, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7bfd253a08be75b4b9b534e8c538bd48, type: 3}
     - target: {fileID: 8536224529958227072, guid: 1cf5c856c6ee4f54bb2aab0b8d428538, type: 3}
       propertyPath: _item
       value: 3
