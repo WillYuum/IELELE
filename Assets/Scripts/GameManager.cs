@@ -11,8 +11,12 @@ public enum GameScenes
     Map,
 }
 
-public class GameManager : GenericStaticClass<GameManager>
+public class GameManager : MonoBehaviourSingleton<GameManager>
 {
+    [SerializeField] public ItemsData ItemsData;
+
+    public BoughtItems CollectedItems = new BoughtItems();
+
     public void StartGame()
     {
 
