@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScenes/IELELE_Scene.unity
     guid: d4f3d17a67e6e924e911b66a9fab32e6
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/LoseScreen.unity
+    guid: 092588f13708802459de3cec05d47d8a
   m_configObjects: {}

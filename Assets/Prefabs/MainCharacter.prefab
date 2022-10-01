@@ -22441,7 +22441,7 @@ MonoBehaviour:
     - name: Crouch
       active:
         UseConstant: 1
-        ConstantValue: 1
+        ConstantValue: 0
         Variable: {fileID: 11400000, guid: 1135ac854b3e61e498718248dd6a7b81, type: 2}
       type: 1
       input: InputValue
@@ -22483,7 +22483,7 @@ MonoBehaviour:
     - name: Dodge
       active:
         UseConstant: 1
-        ConstantValue: 1
+        ConstantValue: 0
         Variable: {fileID: 0}
       type: 1
       input: InputValue
@@ -22491,7 +22491,7 @@ MonoBehaviour:
       GetPressed: 1
       InputValue: 0
       ToggleValue: 0
-      ResetOnDisable: 1
+      ResetOnDisable: 0
       OnInputDown:
         m_PersistentCalls:
           m_Calls: []
@@ -22525,7 +22525,7 @@ MonoBehaviour:
     - name: Interact
       active:
         UseConstant: 1
-        ConstantValue: 1
+        ConstantValue: 0
         Variable: {fileID: 0}
       type: 1
       input: Action
@@ -22579,7 +22579,7 @@ MonoBehaviour:
     - name: Glide
       active:
         UseConstant: 1
-        ConstantValue: 1
+        ConstantValue: 0
         Variable: {fileID: 0}
       type: 1
       input: Glide
@@ -22621,7 +22621,7 @@ MonoBehaviour:
     - name: LockTarget
       active:
         UseConstant: 1
-        ConstantValue: 1
+        ConstantValue: 0
         Variable: {fileID: 0}
       type: 1
       input: LockTarget
@@ -22629,7 +22629,7 @@ MonoBehaviour:
       GetPressed: 1
       InputValue: 0
       ToggleValue: 0
-      ResetOnDisable: 1
+      ResetOnDisable: 0
       OnInputDown:
         m_PersistentCalls:
           m_Calls:
@@ -22675,7 +22675,7 @@ MonoBehaviour:
     - name: Aim
       active:
         UseConstant: 1
-        ConstantValue: 1
+        ConstantValue: 0
         Variable: {fileID: 0}
       type: 1
       input: Aim
@@ -22683,7 +22683,7 @@ MonoBehaviour:
       GetPressed: 0
       InputValue: 0
       ToggleValue: 0
-      ResetOnDisable: 1
+      ResetOnDisable: 0
       OnInputDown:
         m_PersistentCalls:
           m_Calls: []
@@ -22717,7 +22717,7 @@ MonoBehaviour:
     - name: MainAttack
       active:
         UseConstant: 1
-        ConstantValue: 1
+        ConstantValue: 0
         Variable: {fileID: 0}
       type: 1
       input: Attack1
@@ -22725,7 +22725,7 @@ MonoBehaviour:
       GetPressed: 0
       InputValue: 0
       ToggleValue: 0
-      ResetOnDisable: 1
+      ResetOnDisable: 0
       OnInputDown:
         m_PersistentCalls:
           m_Calls: []
@@ -22759,7 +22759,7 @@ MonoBehaviour:
     - name: SecondAttack
       active:
         UseConstant: 1
-        ConstantValue: 1
+        ConstantValue: 0
         Variable: {fileID: 0}
       type: 1
       input: Attack2
@@ -22767,7 +22767,7 @@ MonoBehaviour:
       GetPressed: 0
       InputValue: 0
       ToggleValue: 0
-      ResetOnDisable: 1
+      ResetOnDisable: 0
       OnInputDown:
         m_PersistentCalls:
           m_Calls: []
@@ -22801,7 +22801,7 @@ MonoBehaviour:
     - name: Reload
       active:
         UseConstant: 1
-        ConstantValue: 1
+        ConstantValue: 0
         Variable: {fileID: 0}
       type: 1
       input: Reload
@@ -22809,7 +22809,7 @@ MonoBehaviour:
       GetPressed: 1
       InputValue: 0
       ToggleValue: 0
-      ResetOnDisable: 1
+      ResetOnDisable: 0
       OnInputDown:
         m_PersistentCalls:
           m_Calls: []
@@ -22843,7 +22843,7 @@ MonoBehaviour:
     - name: Left Holster
       active:
         UseConstant: 1
-        ConstantValue: 1
+        ConstantValue: 0
         Variable: {fileID: 0}
       type: 1
       input: InputValue
@@ -22851,7 +22851,7 @@ MonoBehaviour:
       GetPressed: 1
       InputValue: 0
       ToggleValue: 0
-      ResetOnDisable: 1
+      ResetOnDisable: 0
       OnInputDown:
         m_PersistentCalls:
           m_Calls: []
@@ -22885,7 +22885,7 @@ MonoBehaviour:
     - name: Right Holster
       active:
         UseConstant: 1
-        ConstantValue: 1
+        ConstantValue: 0
         Variable: {fileID: 0}
       type: 1
       input: InputValue
@@ -22893,7 +22893,7 @@ MonoBehaviour:
       GetPressed: 1
       InputValue: 0
       ToggleValue: 0
-      ResetOnDisable: 1
+      ResetOnDisable: 0
       OnInputDown:
         m_PersistentCalls:
           m_Calls: []
@@ -22927,7 +22927,7 @@ MonoBehaviour:
     - name: Back Holster
       active:
         UseConstant: 1
-        ConstantValue: 1
+        ConstantValue: 0
         Variable: {fileID: 0}
       type: 1
       input: InputValue
@@ -22935,7 +22935,7 @@ MonoBehaviour:
       GetPressed: 1
       InputValue: 0
       ToggleValue: 0
-      ResetOnDisable: 1
+      ResetOnDisable: 0
       OnInputDown:
         m_PersistentCalls:
           m_Calls: []

@@ -17,12 +17,6 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
 
     public BoughtItems CollectedItems = new BoughtItems();
 
-    public void StartGame()
-    {
-
-    }
-
-
 
     public void GoToScene(GameScenes scene)
     {
@@ -41,5 +35,16 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
             default:
                 break;
         }
+    }
+
+
+    public void LoseGame()
+    {
+        ShowLoseScreen();
+    }
+
+    private void ShowLoseScreen()
+    {
+        SceneManager.LoadScene("LoseScreen", LoadSceneMode.Additive);
     }
 }
