@@ -9,6 +9,7 @@ public enum GameScenes
     KnighScene,
     IELELE,
     Map,
+    BuyScreen,
 }
 
 public class GameManager : MonoBehaviourSingleton<GameManager>
@@ -40,11 +41,22 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
 
     public void LoseGame()
     {
+        Time.timeScale = 0;
+
         ShowLoseScreen();
+        Invoke(nameof(RestartGame), 2.5f);
     }
 
     private void ShowLoseScreen()
     {
         SceneManager.LoadScene("LoseScreen", LoadSceneMode.Additive);
     }
+
+    private void RestartGame()
+    {
+        Time.timeScale = 1;
+
+        GoToScene(GameScenes.BuyScreen);
+    }
+
 }
