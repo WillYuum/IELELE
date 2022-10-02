@@ -107,7 +107,7 @@ public static class PersistanceItems
 
     public static bool CheckIfItemsEmpty()
     {
-        if (Sword == false && Bow == false && Ie == false && Garlic == false && Flute == false && Basil == false && WormWood == false && Food > 0 && Water > 0 && Beads == false)
+        if (Sword == false && Bow == false && Ie == false && Garlic == false && Flute == false && Basil == false && WormWood == false && Food <= 0 && Water <= 0 && Beads == false)
         {
             return true;
         }
