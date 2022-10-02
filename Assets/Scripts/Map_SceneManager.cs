@@ -9,6 +9,13 @@ public class Map_SceneManager : MonoBehaviour
     [SerializeField] GameObject helper_NoPathBuilt;
     [SerializeField] GameObject helper_NoItems;
 
+    [SerializeField] GameObject book1;
+    [SerializeField] GameObject book2;
+    [SerializeField] GameObject book3;
+    [SerializeField] GameObject book4;
+    [SerializeField] GameObject book5;
+    [SerializeField] GameObject book6;
+
 
     [SerializeField] Transform level1Button;
 
@@ -104,5 +111,84 @@ public class Map_SceneManager : MonoBehaviour
     {
         helper_NoPathBuilt.SetActive(false);
     }
+
+
+    public void book()
+    {
+        book1.SetActive(true);
+
+    }
+
+    public void book_exit()
+    {
+        book1.SetActive(false);
+        book2.SetActive(false);
+        book3.SetActive(false);
+        book4.SetActive(false);
+        book5.SetActive(false);
+        book6.SetActive(false);
+    }
+
+    public void book_next12()
+    {
+        book1.SetActive(false);
+        book2.SetActive(true);
+    }
+
+    public void book_back21()
+    {
+        book1.SetActive(true);
+        book2.SetActive(false);
+    }
+
+    public void book_next23()
+    {
+        book2.SetActive(false);
+        book3.SetActive(true);
+    }
+
+    public void book_back32()
+    {
+        book2.SetActive(true);
+        book3.SetActive(false);
+    }
+
+    public void book_next34()
+    {
+        book3.SetActive(false);
+        book4.SetActive(true);
+    }
+
+    public void book_back43()
+    {
+        book3.SetActive(true);
+        book4.SetActive(false);
+    }
+
+    public void book_next45()
+    {
+        book4.SetActive(false);
+        book5.SetActive(true);
+    }
+
+    public void book_back54()
+    {
+        book4.SetActive(true);
+        book5.SetActive(false);
+    }
+
+    public void book_next56()
+    {
+        book5.SetActive(false);
+        book6.SetActive(true);
+    }
+
+    public void book_back65()
+    {
+        book5.SetActive(true);
+        book6.SetActive(false);
+    }
+
+
 
 }
