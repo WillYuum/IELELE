@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
 
     [SerializeField] public ItemsData ItemsData;
 
-    public BoughtItems CollectedItems = new BoughtItems();
+    // public BoughtItems CollectedItems = new BoughtItems();
 
 
     public void GoToScene(GameScenes scene)
@@ -266,4 +266,10 @@ public static class PersistanceItems
         Food = 0;
         Water = 0;
     }
+}
+
+public static class GamePersistance
+{
+    public static bool finishedKnightScene = true;
+    public static bool finishedIeleleScene = false;
 }

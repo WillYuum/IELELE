@@ -19,6 +19,6 @@ public class IELELE : MonoBehaviour
 
     public void GetAngry()
     {
-
+        GamePersistance.finishedIeleleScene = true;
     }
 }

@@ -55,12 +55,12 @@ public class Map_SceneManager : MonoBehaviour
             levelIcon.transform.Find("X_Icon").gameObject.SetActive(true);
         }
 
-        if (GameManager.instance.finishedKnightScene)
+        if (GamePersistance.finishedKnightScene)
         {
             DisplayX_Icon(KnightLevel);
             PulseTransform(IeleleLevel.transform);
         }
-        else if (GameManager.instance.finishedIeleleScene)
+        else if (GamePersistance.finishedIeleleScene)
         {
             DisplayX_Icon(KnightLevel);
             DisplayX_Icon(IeleleLevel);
