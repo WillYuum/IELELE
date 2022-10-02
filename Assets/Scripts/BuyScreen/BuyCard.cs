@@ -10,15 +10,17 @@ public class BuyCard : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _costIndicator;
     [SerializeField] private TextMeshProUGUI _energyIndicator;
 
-    [SerializeField] private TextMeshProUGUI _amountInventory;
 
     private Action<int, Items> _onBuy;
 
     [SerializeField] private Button _button;
 
-    private void Awake()
+    [SerializeField] private GameObject highlight;
+
+    private void Start()
     {
         Render();
+        highlight.SetActive(false);
         // _buyButton.Init(OnBuy);
     }
 
@@ -38,6 +40,16 @@ public class BuyCard : MonoBehaviour
             var data = GameManager.instance.ItemsData.GetItems(_item);
 
             _onBuy.Invoke(data.Cost, _item);
+
+            if (PersistanceItems.CheckIfBoughtItem(_item))
+            {
+                HightlightCard();
+            }
         });
+    }
+
+    private void HightlightCard()
+    {
+        highlight.SetActive(true);
     }
 }
