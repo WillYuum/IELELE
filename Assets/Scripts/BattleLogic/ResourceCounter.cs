@@ -80,7 +80,33 @@ public class ResourceCounter : MonoBehaviour
         switch (item)
         {
             case Items.Sword:
+                {
+                    Physics.SphereCast(transform.position, 4.2f, transform.forward, out RaycastHit pew, 4.2f);
+                    if (pew.collider.gameObject.TryGetComponent(out Knight knight))
+                    {
+                        knight.TakeDamage(50);
+                    }
+                    else if (pew.collider.gameObject.TryGetComponent(out IELELE ielele))
+                    {
+                        pew.collider.GetComponent<IELELE>().GetStunned();
+                    }
+                }
+                break;
+
             case Items.Bow:
+                float range = 4.2f * 1.8f;
+                Physics.SphereCast(transform.position, range, transform.forward, out RaycastHit hit, range);
+                if (hit.collider != null)
+                {
+                    if (hit.collider.gameObject.TryGetComponent(out Knight knight))
+                    {
+                        knight.TakeDamage(50);
+                    }
+                    else if (hit.collider.gameObject.TryGetComponent(out IELELE ielele))
+                    {
+                        hit.collider.GetComponent<IELELE>().GetStunned();
+                    }
+                }
                 //show range
                 break;
 
