@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +13,7 @@ public class ResourceCounter : MonoBehaviour
 
     [SerializeField] private Slider[] _sliders;
 
+    [SerializeField] private BattleCards[] _battleCards;
     private void Awake()
     {
         foreach (var slider in _sliders)
@@ -22,17 +21,104 @@ public class ResourceCounter : MonoBehaviour
             slider.value = 0.0f;
         }
         _currentResouceCount = 0;
+
+        SetListenersToBattleCards();
     }
 
+
+    private void SetListenersToBattleCards()
+    {
+        foreach (var card in _battleCards)
+        {
+            card.OnClickButton(OnClickBattleCard);
+            card.SetHoverLogic(OnHoverBattleCard);
+        }
+    }
+
+
+    private void OnClickBattleCard(int energyCost, Items item)
+    {
+        if (_currentResouceCount >= energyCost)
+        {
+            RemoveResourceCount(energyCost);
+
+            switch (item)
+            {
+                case Items.Sword:
+                case Items.Bow:
+
+                    break;
+
+                case Items.Basil:
+                case Items.Beads:
+                case Items.Flute:
+                case Items.Garlic:
+                case Items.WormWood:
+                case Items.IE:
+                    //Hide range
+                    break;
+
+                default:
+                    break;
+            }
+        }
+    }
+
+
+    private void AttackEnemy()
+    {
+
+    }
+
+    private void OnHoverBattleCard(Items item)
+    {
+        switch (item)
+        {
+            case Items.Sword:
+            case Items.Bow:
+                //Try hit enemy
+                break;
+
+            case Items.Basil:
+            case Items.Beads:
+            case Items.Flute:
+            case Items.Garlic:
+            case Items.WormWood:
+            case Items.IE:
+                //Piss Enemy Off
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    private void OnClickBattleCard(Items item)
+    {
+        switch (item)
+        {
+            case Items.Sword:
+            case Items.Bow:
+                //show range
+                break;
+
+            case Items.Basil:
+            case Items.Beads:
+            case Items.Flute:
+            case Items.Garlic:
+            case Items.WormWood:
+            case Items.IE:
+                //Hide range
+                break;
+
+            default:
+                break;
+        }
+    }
 
     void Update()
     {
         IncreaseResourceCount();
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            RemoveResourceCount(1);
-        }
     }
 
     private void IncreaseResourceCount()
@@ -70,10 +156,6 @@ public class ResourceCounter : MonoBehaviour
             _currentResouceCount--;
             _currentResouceCount = Mathf.Clamp(_currentResouceCount, 0, _maxResourceCount - 1);
         }
-
-        // for (int i = amount - 1; i >= 0; i--)
-        // {
-        // }
 
 
         float totalAmountRemoved = amount;
