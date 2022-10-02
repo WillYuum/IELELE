@@ -433,6 +433,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1521932271, guid: 19c42121ded3a6445bc7ecd48c90466b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2084197754098571528, guid: 19c42121ded3a6445bc7ecd48c90466b, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2084197754098571528, guid: 19c42121ded3a6445bc7ecd48c90466b, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2084197754098571528, guid: 19c42121ded3a6445bc7ecd48c90466b, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2084197754098571528, guid: 19c42121ded3a6445bc7ecd48c90466b, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9110612800918226739, guid: 19c42121ded3a6445bc7ecd48c90466b, type: 3}
       propertyPath: m_Name
       value: BuyScreen_Canvas

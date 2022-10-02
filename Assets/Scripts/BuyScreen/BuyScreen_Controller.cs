@@ -60,7 +60,7 @@ public class BuyScreen_Controller : MonoBehaviour
     }
 
 
-    [SerializeField] private int _startingCoin = 250;
+    [SerializeField] private int _holdingCoin = 250;
     [SerializeField] private TextMeshProUGUI _coinIndicator;
     [SerializeField] private Indicator[] _indicators;
 
@@ -71,7 +71,8 @@ public class BuyScreen_Controller : MonoBehaviour
 
     private void Awake()
     {
-        _coinIndicator.text = _startingCoin.ToString();
+        _holdingCoin = GamePersistance.coins;
+        _coinIndicator.text = _holdingCoin.ToString();
 
         foreach (var item in _indicators)
         {
@@ -83,38 +84,60 @@ public class BuyScreen_Controller : MonoBehaviour
         {
             card.AddClickListeners(OnBuyItem);
         }
+
+        foreach (var card in _cards)
+        {
+            if (PersistanceItems.CheckIfBoughtItem(card._item))
+            {
+                card.HightlightCard();
+            }
+        }
+
+        UpdateAmounts();
     }
 
 
     private void OnBuyItem(int cost, Items item)
     {
-        switch (item)
+        if (_holdingCoin >= cost)
         {
-            case Items.Food:
-            case Items.Water:
-                GameManager.instance.CollectedItems.BuyItem(item, 5);
-                break;
-            default:
-                GameManager.instance.CollectedItems.AddNonFoodWaterITems(item);
-                break;
-        }
+            switch (item)
+            {
+                case Items.Food:
+                case Items.Water:
+                    PersistanceItems.BuyItems(item, 5);
+                    // GameManager.instance.CollectedItems.BuyItem(item, 5);
+                    _holdingCoin -= cost;
+                    UpdateAmounts();
 
-        if (_startingCoin >= cost)
-        {
-            _startingCoin -= cost;
-            _coinIndicator.text = _startingCoin.ToString();
-            GameManager.instance.CollectedItems.BuyItem(item, 1);
-            UpdateAmounts();
+                    break;
+                default:
+
+                    bool boughtItem = PersistanceItems.CheckIfBoughtItem(item);
+
+                    if (boughtItem == false)
+                    {
+                        //They;re a boolean
+                        PersistanceItems.BuyItems(item, 0);
+                        _holdingCoin -= cost;
+                    }
+                    // GameManager.instance.CollectedItems.AddNonFoodWaterITems(item);
+                    break;
+            }
+
+            _coinIndicator.text = _holdingCoin.ToString();
+            // GameManager.instance.CollectedItems.BuyItem(item, 1);
         }
     }
 
     private void OnSellItem(int cost, Items item)
     {
-        if (GameManager.instance.CollectedItems.GetAmount(item) > 0)
+        if (PersistanceItems.CheckIfBoughtItem(item))
         {
-            _startingCoin += cost;
-            _coinIndicator.text = _startingCoin.ToString();
-            GameManager.instance.CollectedItems.decrement(item, 1);
+            _holdingCoin += cost;
+            _coinIndicator.text = _holdingCoin.ToString();
+            // GameManager.instance.CollectedItems.decrement(item, 1);
+            PersistanceItems.RemoveItem(item);
             UpdateAmounts();
         }
     }
@@ -124,19 +147,20 @@ public class BuyScreen_Controller : MonoBehaviour
     {
         foreach (var item in _indicators)
         {
-            item.Render(GameManager.instance.CollectedItems.GetAmount(item.Item));
+            item.Render(PersistanceItems.GetFoodOrWaterCount(item.Item));
         }
     }
 
     [SerializeField] private GameObject _CannontContinueAsshole;
     public void GoToMapScreen()
     {
-        if (GameManager.instance.CollectedItems.CheckIfItemsEmpty())
+        if (PersistanceItems.CheckIfItemsEmpty())
         {
             _CannontContinueAsshole.SetActive(true);
             return;
         }
 
+        GamePersistance.coins = _holdingCoin;
         GameManager.instance.GoToScene(GameScenes.Map);
     }
 

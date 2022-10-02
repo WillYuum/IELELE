@@ -31,7 +31,7 @@ public class KnightScene : MonoBehaviourSingleton<KnightScene>
         endPoint.gameObject.SetActive(true);
         endPoint.Play();
 
-        GameManager.instance.finishedKnightScene = true;
+        GamePersistance.finishedKnightScene = true;
         endPointCollider.action += LeaveMap;
     }
 

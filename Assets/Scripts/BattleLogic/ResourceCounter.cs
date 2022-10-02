@@ -117,15 +117,16 @@ public class ResourceCounter : MonoBehaviour
                 case Items.IE:
                     DoSomethingOn(() =>
                      {
-                         var knight = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Knight>();
 
+                         var knight = GameObject.FindGameObjectWithTag("Enemy");
 
                          if (knight != null)
                          {
+                             var compy = knight.GetComponent<Knight>();
                              Vector3 distBtweenMainCharacterAndKnight = knight.transform.position - MainCharacter.instance.transform.position;
 
-                             knight.TakeDamage(0);
-                             knight.GetAngry();
+                             compy.TakeDamage(0);
+                             compy.GetAngry();
                          }
 
 

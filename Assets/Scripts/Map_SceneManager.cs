@@ -53,23 +53,27 @@ public class Map_SceneManager : MonoBehaviour
         void DisplayX_Icon(GameObject levelIcon)
         {
             levelIcon.transform.Find("X_Icon").gameObject.SetActive(true);
+            levelIcon.GetComponent<InteractableButton_map>().SetButtonTo(MapButtonState.Locked);
         }
 
-        if (GameManager.instance.finishedKnightScene)
+        if (GamePersistance.finishedKnightScene)
         {
             DisplayX_Icon(KnightLevel);
             PulseTransform(IeleleLevel.transform);
+            IeleleLevel.GetComponent<InteractableButton_map>().SetButtonTo(MapButtonState.Normal);
         }
-        else if (GameManager.instance.finishedIeleleScene)
+        else if (GamePersistance.finishedIeleleScene)
         {
             DisplayX_Icon(KnightLevel);
             DisplayX_Icon(IeleleLevel);
             PulseTransform(endingLevel.transform);
+            endingLevel.GetComponent<InteractableButton_map>().SetButtonTo(MapButtonState.Normal);
         }
         else
         {
             PulseTransform(KnightLevel.transform);
         }
+
     }
 
     // Update is called once per frame
@@ -83,12 +87,32 @@ public class Map_SceneManager : MonoBehaviour
         initalNarative.SetActive(false);
     }
 
-    public void itemHelp()
+    public void GoToIelele()
     {
-        if (itemCount == 0)
+        if (PersistanceItems.CheckIfItemsEmpty())
         {
             helper_NoItems.SetActive(true);
         }
+        else
+        {
+            GameManager.instance.GoToScene(GameScenes.IELELE);
+        }
+    }
+
+    public void GoToKnight()
+    {
+        if (PersistanceItems.CheckIfItemsEmpty())
+        {
+            helper_NoItems.SetActive(true);
+        }
+        else
+        {
+            GameManager.instance.GoToScene(GameScenes.IELELE);
+        }
+    }
+
+    public void itemHelp()
+    {
 
     }
 
