@@ -43,9 +43,6 @@ public class ResourceCounter : MonoBehaviour
         {
             RemoveResourceCount(energyCost);
 
-            // var knight = GameObject.FindGameObjectsWithTag("Enemy");
-            // var ielele = GameObject.FindGameObjectsWithTag("Enemy");
-
             void DoSomethingOn(Action actionOnKnight, Action actionOnIelele)
             {
                 var knight = GameObject.FindGameObjectsWithTag("Enemy");
@@ -115,7 +112,21 @@ public class ResourceCounter : MonoBehaviour
                 case Items.Garlic:
                 case Items.WormWood:
                 case Items.IE:
-                    //Hide range
+                    DoSomethingOn(() =>
+                     {
+                         var knight = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Knight>();
+                         Vector3 distBtweenMainCharacterAndKnight = knight.transform.position - MainCharacter.instance.transform.position;
+
+                         knight.TakeDamage(0);
+                         knight.GetAngry();
+
+                     }, () =>
+                     {
+                         var ielele = GameObject.FindGameObjectWithTag("Enemy").GetComponent<IELELE>();
+                         Vector3 distBtweenMainCharacterAndKnight = ielele.transform.position - MainCharacter.instance.transform.position;
+
+                         ielele.GetStunned();
+                     });
 
 
 
@@ -127,11 +138,6 @@ public class ResourceCounter : MonoBehaviour
         }
     }
 
-
-    private void AttackEnemy()
-    {
-
-    }
 
     private void OnHoverBattleCard(Items item)
     {
