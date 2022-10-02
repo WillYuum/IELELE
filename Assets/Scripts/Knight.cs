@@ -94,6 +94,11 @@ public class Knight : MonoBehaviour
         _mainCharacter.GetComponent<MainCharacter>().TakeDamage(_damageToInflict);
     }
 
+    public void GetAngry()
+    {
+
+    }
+
     public void GetStunned()
     {
         isStunned = true;
@@ -115,6 +120,7 @@ public class Knight : MonoBehaviour
         if (_currentHealth <= 0)
         {
             KnightScene.instance.OnKillKnight();
+            Destroy(gameObject);
         }
     }
 }

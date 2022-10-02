@@ -15,6 +15,10 @@ public class MainCharacter : MonoBehaviourSingleton<MainCharacter>
         _currentHealth = _startingHealth;
         _slider.value = 1;
 
+
+        _smallRange.SetActive(false);
+        _largeRange.SetActive(false);
+
     }
 
     private void Update()
@@ -35,6 +39,13 @@ public class MainCharacter : MonoBehaviourSingleton<MainCharacter>
         {
             GameManager.instance.LoseGame();
         }
+    }
+
+
+    public void DisableAllAbilityVisuals()
+    {
+        _smallRange.SetActive(false);
+        _largeRange.SetActive(false);
     }
 
 

@@ -5,10 +5,12 @@ using Utils.GenericSingletons;
 
 public class KnightScene : MonoBehaviourSingleton<KnightScene>
 {
+
     public void OnKillKnight()
     {
-        // GoToScene
+        var BattleCards_UI = GameObject.Find("BattleCards_UI");
+        BattleCards_UI.SetActive(false);
 
-        //Show a beam of light
+        MainCharacter.instance.DisableAllAbilityVisuals();
     }
 }

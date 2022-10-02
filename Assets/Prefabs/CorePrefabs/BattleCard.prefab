@@ -66,6 +66,9 @@ GameObject:
   - component: {fileID: 2173394736321668497}
   - component: {fileID: 2173394736321668496}
   - component: {fileID: 2981016796040792886}
+  - component: {fileID: 6588691548670357742}
+  - component: {fileID: 3845352754516246350}
+  - component: {fileID: 6481049710282878552}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -175,6 +178,88 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6588691548670357742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2173394736321668498}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dbb8d1e86287c2498b5ab8eaeb5a1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Layer:
+    UseConstant: 1
+    ConstantValue:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    Variable: {fileID: 0}
+  triggerInteraction: 0
+  Tags: []
+  onTriggerEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6611222340053370574}
+        m_TargetAssemblyTypeName: BattleCards, Assembly-CSharp
+        m_MethodName: EventOnEnterMOuse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3845352754516246350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2173394736321668498}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feafb137ffacf4e438c7280487d5a737, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Layer:
+    UseConstant: 1
+    ConstantValue:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    Variable: {fileID: 0}
+  triggerInteraction: 2
+  onTriggerExit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6611222340053370574}
+        m_TargetAssemblyTypeName: BattleCards, Assembly-CSharp
+        m_MethodName: OnMouseOverLogic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!65 &6481049710282878552
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2173394736321668498}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 180, y: 260, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6295887649096536641
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +295,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -3.4, y: 47.4}
+  m_AnchoredPosition: {x: -4.4, y: 56.6}
   m_SizeDelta: {x: 59.2859, y: 41.652496}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4959295587322519246
@@ -250,8 +335,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
