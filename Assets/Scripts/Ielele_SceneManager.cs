@@ -62,7 +62,7 @@ public class Ielele_SceneManager : MonoBehaviour
     {
         if (other.tag == "Animal")
         {
-            GameManager.instance.GoToScene(GameScenes.Map);
+            GameManager.instance.GoToScene(GameScenes.Calusari);
         }
     }
 
