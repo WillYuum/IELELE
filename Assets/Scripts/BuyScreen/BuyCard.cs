@@ -11,8 +11,6 @@ public class BuyCard : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _energyIndicator;
 
 
-    private Action<int, Items> _onBuy;
-
     [SerializeField] private Button _button;
 
     [SerializeField] private GameObject highlight;
@@ -21,7 +19,6 @@ public class BuyCard : MonoBehaviour
     {
         Render();
         highlight.SetActive(false);
-        // _buyButton.Init(OnBuy);
     }
 
     private void Render()
@@ -31,25 +28,30 @@ public class BuyCard : MonoBehaviour
         _energyIndicator.text = data.Energy.ToString();
     }
 
-    public void AddClickListeners(Action<int, Items> onBuy)
+    public void AddClickListeners(Action<int, Items> onBuy, Action<int, Items> onSell)
     {
-        _onBuy = onBuy;
+        var data = GameManager.instance.ItemsData.GetItems(_item);
+
         _button.onClick.AddListener(() =>
         {
-            print("CLicked");
-            var data = GameManager.instance.ItemsData.GetItems(_item);
-
-            _onBuy.Invoke(data.Cost, _item);
-
             if (PersistanceItems.CheckIfBoughtItem(_item))
             {
-                HightlightCard();
+                onSell.Invoke(data.Cost, _item);
+                ToggleHightlightCard(false);
+            }
+            else
+            {
+                onBuy.Invoke(data.Cost, _item);
+                if (PersistanceItems.CheckIfBoughtItem(_item))
+                {
+                    ToggleHightlightCard(true);
+                }
             }
         });
     }
 
-    public void HightlightCard()
+    public void ToggleHightlightCard(bool active)
     {
-        highlight.SetActive(true);
+        highlight.SetActive(active);
     }
 }

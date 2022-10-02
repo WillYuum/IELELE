@@ -18,7 +18,7 @@ public class Calusari_Trigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -27,14 +27,14 @@ public class Calusari_Trigger : MonoBehaviour
         {
             StartCoroutine(narative2());
             triggerCalusari = true;
-            
+
         }
 
     }
 
     private IEnumerator narative2()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(5f);
 
         helper_End2.SetActive(true);
         CSM.calusariSong.Stop();

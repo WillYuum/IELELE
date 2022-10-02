@@ -59,6 +59,8 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
 
     public void LoseGame()
     {
+
+        GamePersistance.ResetProps();
         // Time.timeScale = 0;
         PersistanceItems.ResetProps();
 
@@ -277,4 +279,13 @@ public static class GamePersistance
     public static int coins = 250;
     public static bool finishedKnightScene = false;
     public static bool finishedIeleleScene = false;
+
+
+    public static void ResetProps()
+    {
+        coins = 250;
+        finishedKnightScene = false;
+        finishedIeleleScene = false;
+    }
+
 }
