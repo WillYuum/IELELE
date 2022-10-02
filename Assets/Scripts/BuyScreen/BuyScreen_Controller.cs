@@ -117,6 +117,18 @@ public class BuyScreen_Controller : MonoBehaviour
         }
     }
 
+    [SerializeField] private GameObject _CannontContinueAsshole;
+    public void GoToMapScreen()
+    {
+        if (GameManager.instance.CollectedItems.CheckIfItemsEmpty())
+        {
+            _CannontContinueAsshole.SetActive(true);
+            return;
+        }
+
+        GameManager.instance.GoToScene(GameScenes.Map);
+    }
+
 
 }
 

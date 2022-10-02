@@ -10,6 +10,7 @@ public enum GameScenes
     IELELE,
     Map,
     BuyScreen,
+    Narrative,
 }
 
 public class GameManager : MonoBehaviourSingleton<GameManager>
@@ -31,6 +32,12 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
                 break;
             case GameScenes.Map:
                 SceneManager.LoadScene("Map_Scene");
+                break;
+            case GameScenes.BuyScreen:
+                SceneManager.LoadScene("Buy_Scene");
+                break;
+            case GameScenes.Narrative:
+                SceneManager.LoadScene("StartNaratives_Scene");
                 break;
 
             default:

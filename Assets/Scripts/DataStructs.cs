@@ -13,6 +13,15 @@ public class BoughtItems
     public int Water = 0;
     public int Beads = 0;
 
+    public bool CheckIfItemsEmpty()
+    {
+        if (Sword == 0 && Bow == 0 && Ie == 0 && Garlic == 0 && Flute == 0 && Basil == 0 && WormWood == 0 && Food == 0 && Water == 0 && Beads == 0)
+        {
+            return true;
+        }
+        return false;
+    }
+
 
     public void increment(Items item, int amount)
     {

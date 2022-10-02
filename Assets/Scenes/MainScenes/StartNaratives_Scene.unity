@@ -206,7 +206,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 10672519}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 775264071}
+        m_TargetAssemblyTypeName: CanvasNaratives, Assembly-CSharp
+        m_MethodName: GotoMapScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &10672519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -888,6 +900,120 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 599064620}
   m_CullTransparentMesh: 1
+--- !u!1001 &655469032
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6133284855024734832, guid: 222ade9ff54e77b428c4336354e56953, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133284855024734832, guid: 222ade9ff54e77b428c4336354e56953, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1384.6661
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133284855024734832, guid: 222ade9ff54e77b428c4336354e56953, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1230.1982
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133284855024734832, guid: 222ade9ff54e77b428c4336354e56953, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.917232
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133284855024734832, guid: 222ade9ff54e77b428c4336354e56953, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133284855024734832, guid: 222ade9ff54e77b428c4336354e56953, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133284855024734832, guid: 222ade9ff54e77b428c4336354e56953, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133284855024734832, guid: 222ade9ff54e77b428c4336354e56953, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133284855024734832, guid: 222ade9ff54e77b428c4336354e56953, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133284855024734832, guid: 222ade9ff54e77b428c4336354e56953, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133284855024734832, guid: 222ade9ff54e77b428c4336354e56953, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133284855024734835, guid: 222ade9ff54e77b428c4336354e56953, type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 222ade9ff54e77b428c4336354e56953, type: 3}
+--- !u!1001 &661902323
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6133284855024734832, guid: 222ade9ff54e77b428c4336354e56953, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133284855024734832, guid: 222ade9ff54e77b428c4336354e56953, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 869.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133284855024734832, guid: 222ade9ff54e77b428c4336354e56953, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 822.4066
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133284855024734832, guid: 222ade9ff54e77b428c4336354e56953, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.917232
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133284855024734832, guid: 222ade9ff54e77b428c4336354e56953, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133284855024734832, guid: 222ade9ff54e77b428c4336354e56953, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133284855024734832, guid: 222ade9ff54e77b428c4336354e56953, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133284855024734832, guid: 222ade9ff54e77b428c4336354e56953, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133284855024734832, guid: 222ade9ff54e77b428c4336354e56953, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133284855024734832, guid: 222ade9ff54e77b428c4336354e56953, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133284855024734832, guid: 222ade9ff54e77b428c4336354e56953, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133284855024734835, guid: 222ade9ff54e77b428c4336354e56953, type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 222ade9ff54e77b428c4336354e56953, type: 3}
 --- !u!1 &699737681
 GameObject:
   m_ObjectHideFlags: 0
@@ -1035,6 +1161,7 @@ GameObject:
   - component: {fileID: 775264069}
   - component: {fileID: 775264068}
   - component: {fileID: 775264067}
+  - component: {fileID: 775264071}
   m_Layer: 5
   m_Name: Canvas Naratives
   m_TagString: Untagged
@@ -1119,13 +1246,25 @@ RectTransform:
   - {fileID: 414375013}
   - {fileID: 1209214350}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &775264071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775264066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8357dd6a1966d1e4e842fe9f0d06c712, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1005308675
 GameObject:
   m_ObjectHideFlags: 0
@@ -1353,7 +1492,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1032254202
 GameObject:
@@ -1450,7 +1589,7 @@ RectTransform:
   - {fileID: 1661824563}
   - {fileID: 1149031715}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2047,7 +2186,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1755107330
 GameObject:
@@ -2132,7 +2271,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1755107333}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 775264071}
+        m_TargetAssemblyTypeName: CanvasNaratives, Assembly-CSharp
+        m_MethodName: GotoMapScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1755107333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2237,7 +2388,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1918598311
 GameObject:
@@ -2457,7 +2608,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2085203951}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 775264071}
+        m_TargetAssemblyTypeName: CanvasNaratives, Assembly-CSharp
+        m_MethodName: GotoMapScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2085203951
 MonoBehaviour:
   m_ObjectHideFlags: 0
