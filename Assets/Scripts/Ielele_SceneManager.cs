@@ -7,6 +7,11 @@ public class Ielele_SceneManager : MonoBehaviour
     [SerializeField] GameObject hora;
     [SerializeField] Ielele_Trigger IT;
 
+    [SerializeField] GameObject helper_Ielele1;
+    [SerializeField] GameObject helper_Ielele2;
+
+    [SerializeField] GameObject endPointIonut;
+
     AudioSource ieleleSong;
 
     private Vector3 horaPosition;
@@ -22,6 +27,8 @@ public class Ielele_SceneManager : MonoBehaviour
 
         horaPosition = new Vector3(34.75f, -1.0f, 39.98f);
         horaStart = false;
+
+        endPointIonut.SetActive(false);
 
     }
 
@@ -40,6 +47,9 @@ public class Ielele_SceneManager : MonoBehaviour
 
             ieleleSong = GetComponent<AudioSource>();
             ieleleSong.Play(0);
+
+
+            StartCoroutine(narativIelele1());
 
 
             horaStart = true;
@@ -62,6 +72,9 @@ public class Ielele_SceneManager : MonoBehaviour
             Destroy(gameObject.GetComponent<AudioSource>());
             Destroy(enemyLeft);
             endPointCollider.action += LeaveMap;
+
+
+            narativIelele2();
         }
 
     }
@@ -77,5 +90,34 @@ public class Ielele_SceneManager : MonoBehaviour
 
 
 
+    private IEnumerator narativIelele1()
+    {
+        yield return new WaitForSeconds(2.0f);
+        helper_Ielele1.SetActive(true);
+        Time.timeScale = 0;
+
+
+    }
+
+    public void narativ1Ielele_close()
+    {
+        helper_Ielele1.SetActive(false);
+        Time.timeScale = 1;
+    }
+
+
+    public void narativIelele2()
+    {
+        helper_Ielele2.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void narativ2Ielele_close()
+    {
+        helper_Ielele2.SetActive(false);
+        Time.timeScale = 1;
+
+        endPointIonut.SetActive(true);
+    }
 
 }
