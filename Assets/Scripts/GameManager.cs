@@ -15,6 +15,9 @@ public enum GameScenes
 
 public class GameManager : MonoBehaviourSingleton<GameManager>
 {
+    public bool finishedKnightScene = false;
+    public bool finishedIeleleScene = false;
+
     [SerializeField] public ItemsData ItemsData;
 
     public BoughtItems CollectedItems = new BoughtItems();
@@ -48,10 +51,10 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
 
     public void LoseGame()
     {
-        Time.timeScale = 0;
+        // Time.timeScale = 0;
 
         ShowLoseScreen();
-        Invoke(nameof(RestartGame), 2.5f);
+        Invoke(nameof(RestartGame), 1.0f);
     }
 
     private void ShowLoseScreen()
