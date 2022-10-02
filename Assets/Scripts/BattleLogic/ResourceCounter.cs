@@ -72,25 +72,7 @@ public class ResourceCounter : MonoBehaviour
 
     private void OnHoverBattleCard(Items item)
     {
-        switch (item)
-        {
-            case Items.Sword:
-            case Items.Bow:
-                //Try hit enemy
-                break;
-
-            case Items.Basil:
-            case Items.Beads:
-            case Items.Flute:
-            case Items.Garlic:
-            case Items.WormWood:
-            case Items.IE:
-                //Piss Enemy Off
-                break;
-
-            default:
-                break;
-        }
+        MainCharacter.instance.ToggleAbilityItem(item);
     }
 
     private void OnClickBattleCard(Items item)
