@@ -118,17 +118,27 @@ public class ResourceCounter : MonoBehaviour
                     DoSomethingOn(() =>
                      {
                          var knight = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Knight>();
-                         Vector3 distBtweenMainCharacterAndKnight = knight.transform.position - MainCharacter.instance.transform.position;
 
-                         knight.TakeDamage(0);
-                         knight.GetAngry();
+
+                         if (knight != null)
+                         {
+                             Vector3 distBtweenMainCharacterAndKnight = knight.transform.position - MainCharacter.instance.transform.position;
+
+                             knight.TakeDamage(0);
+                             knight.GetAngry();
+                         }
+
 
                      }, () =>
                      {
-                         var ielele = GameObject.FindGameObjectWithTag("Enemy").GetComponent<IELELE>();
-                         Vector3 distBtweenMainCharacterAndKnight = ielele.transform.position - MainCharacter.instance.transform.position;
+                         var ielele = GameObject.FindGameObjectWithTag("Enemy").GetComponent<HoraBehavior>();
 
-                         ielele.GetStunned();
+                         if (ielele != null)
+                         {
+                             Vector3 distBtweenMainCharacterAndKnight = ielele.transform.position - MainCharacter.instance.transform.position;
+
+                             ielele.GetStunned();
+                         }
                      });
 
 
