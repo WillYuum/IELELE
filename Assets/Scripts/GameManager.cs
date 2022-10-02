@@ -12,6 +12,7 @@ public enum GameScenes
     BuyScreen,
     Narrative,
     Calusari,
+    Menu
 }
 
 public class GameManager : MonoBehaviourSingleton<GameManager>
@@ -42,6 +43,9 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
                 break;
             case GameScenes.Narrative:
                 SceneManager.LoadScene("StartNaratives_Scene");
+                break;
+            case GameScenes.Menu:
+                SceneManager.LoadScene("MainMenu_Scene");
                 break;
             case GameScenes.Calusari:
                 SceneManager.LoadScene("Trial3_0_Calusari_Scene");
