@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class ResourceCounter : MonoBehaviour
@@ -27,12 +28,14 @@ public class ResourceCounter : MonoBehaviour
     }
 
 
+
     private void SetListenersToBattleCards()
     {
         foreach (var card in _battleCards)
         {
             card.OnClickButton(OnClickBattleCard);
             card.SetHoverLogic(OnHoverBattleCard);
+            card.SetLeaveHover(OnHoverLeaveBattleCard);
         }
     }
 
@@ -142,6 +145,11 @@ public class ResourceCounter : MonoBehaviour
     private void OnHoverBattleCard(Items item)
     {
         MainCharacter.instance.ToggleAbilityItem(item);
+    }
+
+    private void OnHoverLeaveBattleCard()
+    {
+        MainCharacter.instance.DisableAllAbilityVisuals();
     }
 
     void Update()

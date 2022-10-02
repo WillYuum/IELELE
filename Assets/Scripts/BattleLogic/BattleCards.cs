@@ -3,9 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class BattleCards : MonoBehaviour
+public class BattleCards : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] public Items Item;
     [SerializeField] private TextMeshProUGUI _energyCost;
@@ -16,6 +17,15 @@ public class BattleCards : MonoBehaviour
     {
         InitCard();
     }
+
+
+    // private void Update()
+    // {
+    //     if (EventSystem.current.IsPointerOverGameObject())
+    //     {
+
+    //     }
+    // }
 
     public void InitCard()
     {
@@ -35,10 +45,15 @@ public class BattleCards : MonoBehaviour
     }
 
 
-    void OnMouseOver()
+    public void EventOnEnterMOuse()
     {
-        print("ON HOVER");
+        print("Enter");
         OnHoverButton.Invoke(Item);
+    }
+    public void OnMouseOverLogic()
+    {
+        print("Exit");
+        _onLeave.Invoke();
     }
 
     private Action<Items> OnHoverButton;
@@ -48,6 +63,25 @@ public class BattleCards : MonoBehaviour
     }
 
 
+    private Action _onLeave;
+    public void SetLeaveHover(Action onLeave)
+    {
+        _onLeave = onLeave;
+    }
 
 
+
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        Debug.Log("Mouse enter");
+        OnHoverButton.Invoke(Item);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        Debug.Log("Mouse exit");
+        _onLeave.Invoke();
+
+    }
 }

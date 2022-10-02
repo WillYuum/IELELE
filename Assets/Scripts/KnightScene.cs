@@ -10,5 +10,7 @@ public class KnightScene : MonoBehaviourSingleton<KnightScene>
     {
         var BattleCards_UI = GameObject.Find("BattleCards_UI");
         BattleCards_UI.SetActive(false);
+
+        MainCharacter.instance.DisableAllAbilityVisuals();
     }
 }

@@ -42,6 +42,13 @@ public class MainCharacter : MonoBehaviourSingleton<MainCharacter>
     }
 
 
+    public void DisableAllAbilityVisuals()
+    {
+        _smallRange.SetActive(false);
+        _largeRange.SetActive(false);
+    }
+
+
 
     [SerializeField] private GameObject _smallRange;
     [SerializeField] private GameObject _largeRange;
