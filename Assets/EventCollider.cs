@@ -10,6 +10,6 @@ public class EventCollider : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        action.Invoke(other);
+        action?.Invoke(other);
     }
 }

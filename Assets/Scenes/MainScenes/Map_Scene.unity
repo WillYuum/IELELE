@@ -6306,9 +6306,9 @@ MonoBehaviour:
   helper_NoPathBuilt: {fileID: 701886425}
   helper_NoItems: {fileID: 1229801102}
   level1Button: {fileID: 543165957}
-  KnightLevel: {fileID: 0}
-  IeleleLevel: {fileID: 0}
-  endingLevel: {fileID: 0}
+  KnightLevel: {fileID: 543165956}
+  IeleleLevel: {fileID: 905526951}
+  endingLevel: {fileID: 64651403}
 --- !u!1 &1772491935
 GameObject:
   m_ObjectHideFlags: 0
