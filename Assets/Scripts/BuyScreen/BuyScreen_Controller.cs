@@ -82,14 +82,14 @@ public class BuyScreen_Controller : MonoBehaviour
 
         foreach (var card in _cards)
         {
-            card.AddClickListeners(OnBuyItem);
+            card.AddClickListeners(OnBuyItem, OnSellItem);
         }
 
         foreach (var card in _cards)
         {
             if (PersistanceItems.CheckIfBoughtItem(card._item))
             {
-                card.HightlightCard();
+                card.ToggleHightlightCard(true);
             }
         }
 
