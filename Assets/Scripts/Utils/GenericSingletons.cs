@@ -18,7 +18,8 @@ namespace Utils.GenericSingletons
                         _instance = objs[0];
                     if (objs.Length > 1)
                     {
-                        Debug.LogError("There is more than one " + typeof(T).Name + " in the scene.");
+                        // Debug.LogError("There is more than one " + typeof(T).Name + " in the scene.");
+                        Destroy(objs[1].gameObject);
                     }
                     if (_instance == null)
                     {
