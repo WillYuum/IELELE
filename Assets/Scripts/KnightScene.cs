@@ -8,10 +8,19 @@ public class KnightScene : MonoBehaviourSingleton<KnightScene>
     [SerializeField] private ParticleSystem endPoint;
     [SerializeField] private EventCollider endPointCollider;
 
+    [SerializeField] GameObject helperKnight;
+
     private void Awake()
     {
         endPoint.gameObject.SetActive(false);
     }
+
+    public void Start()
+    {
+        StartCoroutine(narativeKnight());
+    }
+
+
     public void OnKillKnight()
     {
         var BattleCards_UI = GameObject.Find("BattleCards_UI");
@@ -34,6 +43,37 @@ public class KnightScene : MonoBehaviourSingleton<KnightScene>
             GameManager.instance.GoToScene(GameScenes.Map);
         }
     }
+
+
+
+    private IEnumerator narativeKnight()
+    {
+        yield return new WaitForSeconds(4f);
+        helperKnight.SetActive(true);
+        pauseGame();
+
+    }
+
+
+    private void pauseGame()
+    {
+
+        Time.timeScale = 0;
+
+    }
+
+    public void playGame()
+    {
+
+        Time.timeScale = 1;
+
+        helperKnight.SetActive(false);
+
+    }
+
+
+
+
 
 
 }
