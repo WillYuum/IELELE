@@ -13,9 +13,13 @@ public class Ielele_SceneManager : MonoBehaviour
 
     private bool horaStart;
 
+    [SerializeField] private EventCollider wellCollider;
+
     // Start is called before the first frame update
     void Start()
     {
+        wellCollider.action += onFinishIelele;
+
         horaPosition = new Vector3(34.75f, -1.0f, 39.98f);
         horaStart = false;
 
@@ -51,10 +55,15 @@ public class Ielele_SceneManager : MonoBehaviour
     [SerializeField] private EventCollider endPointCollider;
 
 
-    public void onFinishIelele()
+    public void onFinishIelele(Collider other)
     {
-        Destroy(enemyLeft);
-        endPointCollider.action += LeaveMap;
+        if (other.tag == "Animal")
+        {
+            Destroy(gameObject.GetComponent<AudioSource>());
+            Destroy(enemyLeft);
+            endPointCollider.action += LeaveMap;
+        }
+
     }
 
 
