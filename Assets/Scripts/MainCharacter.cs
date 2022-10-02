@@ -15,6 +15,10 @@ public class MainCharacter : MonoBehaviourSingleton<MainCharacter>
         _currentHealth = _startingHealth;
         _slider.value = 1;
 
+
+        _smallRange.SetActive(false);
+        _largeRange.SetActive(false);
+
     }
 
     private void Update()

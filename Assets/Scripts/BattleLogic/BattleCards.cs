@@ -37,6 +37,7 @@ public class BattleCards : MonoBehaviour
 
     void OnMouseOver()
     {
+        print("ON HOVER");
         OnHoverButton.Invoke(Item);
     }
 
