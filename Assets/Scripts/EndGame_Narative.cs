@@ -19,13 +19,14 @@ public class EndGame_Narative : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void help1_close()
     {
         helper_End1.SetActive(false);
         Debug.Log("Btn pressed");
+        Time.timeScale = 1;
     }
 
 
@@ -36,6 +37,7 @@ public class EndGame_Narative : MonoBehaviour
             helper_End1.SetActive(true);
 
             narative1 = true;
+            Time.timeScale = 0;
 
 
         }
