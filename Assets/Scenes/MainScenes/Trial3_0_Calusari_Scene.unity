@@ -2254,6 +2254,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   calusari: {fileID: 345716795465159751, guid: c6283f014d4e38d4799324eff62bf99a, type: 3}
   CT: {fileID: 733976355}
+--- !u!1 &1769958759 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 1b1855b9ff55aff4e85433c21d07ca92, type: 3}
+  m_PrefabInstance: {fileID: 1854377017}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1769958763
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769958759}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.044894945, y: 0.044893127, z: 0.094999984}
+  m_Center: {x: -0.0000031292439, y: -0.000025823707, z: 0.047499992}
 --- !u!1 &1834219420
 GameObject:
   m_ObjectHideFlags: 0

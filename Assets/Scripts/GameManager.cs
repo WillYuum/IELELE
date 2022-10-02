@@ -11,10 +11,14 @@ public enum GameScenes
     Map,
     BuyScreen,
     Narrative,
+    Calusari,
 }
 
 public class GameManager : MonoBehaviourSingleton<GameManager>
 {
+    public bool finishedKnightScene = false;
+    public bool finishedIeleleScene = false;
+
     [SerializeField] public ItemsData ItemsData;
 
     public BoughtItems CollectedItems = new BoughtItems();
@@ -39,6 +43,9 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
             case GameScenes.Narrative:
                 SceneManager.LoadScene("StartNaratives_Scene");
                 break;
+            case GameScenes.Calusari:
+                SceneManager.LoadScene("Trial3_0_Calusari_Scene");
+                break;
 
             default:
                 break;
@@ -48,10 +55,10 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
 
     public void LoseGame()
     {
-        Time.timeScale = 0;
+        // Time.timeScale = 0;
 
         ShowLoseScreen();
-        Invoke(nameof(RestartGame), 2.5f);
+        Invoke(nameof(RestartGame), 1.0f);
     }
 
     private void ShowLoseScreen()

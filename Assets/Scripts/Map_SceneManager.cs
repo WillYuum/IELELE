@@ -20,11 +20,49 @@ public class Map_SceneManager : MonoBehaviour
 
         initalNarative.SetActive(true);
 
-        DOTween.Sequence()
-            .Append(level1Button.DOScale(new Vector2(1.1f, 1.1f), 0.35f).SetDelay(0.35f))
-            .Append(level1Button.DOScale(Vector2.one, 0.35f))
-            .SetLoops(-1, LoopType.Restart);
+        // DOTween.Sequence()
+        //     .Append(level1Button.DOScale(new Vector2(1.1f, 1.1f), 0.35f).SetDelay(0.35f))
+        //     .Append(level1Button.DOScale(Vector2.one, 0.35f))
+        //     .SetLoops(-1, LoopType.Restart);
 
+        ShowOneOfTheLevels();
+
+    }
+
+    private void PulseTransform(Transform transform)
+    {
+        DOTween.Sequence()
+            .Append(transform.DOScale(new Vector2(1.1f, 1.1f), 0.35f).SetDelay(0.35f))
+            .Append(transform.DOScale(Vector2.one, 0.35f))
+            .SetLoops(-1, LoopType.Restart);
+    }
+
+
+    [SerializeField] private GameObject KnightLevel;
+    [SerializeField] private GameObject IeleleLevel;
+    [SerializeField] private GameObject endingLevel;
+    public void ShowOneOfTheLevels()
+    {
+        void DisplayX_Icon(GameObject levelIcon)
+        {
+            levelIcon.transform.Find("X_Icon").gameObject.SetActive(true);
+        }
+
+        if (GameManager.instance.finishedKnightScene)
+        {
+            DisplayX_Icon(KnightLevel);
+            PulseTransform(IeleleLevel.transform);
+        }
+        else if (GameManager.instance.finishedIeleleScene)
+        {
+            DisplayX_Icon(KnightLevel);
+            DisplayX_Icon(IeleleLevel);
+            PulseTransform(endingLevel.transform);
+        }
+        else
+        {
+            PulseTransform(KnightLevel.transform);
+        }
     }
 
     // Update is called once per frame

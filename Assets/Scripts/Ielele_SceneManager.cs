@@ -18,19 +18,21 @@ public class Ielele_SceneManager : MonoBehaviour
     {
         horaPosition = new Vector3(34.75f, -1.0f, 39.98f);
         horaStart = false;
-        
+
     }
+
+    private GameObject enemyLeft;
 
     // Update is called once per frame
     void Update()
     {
-        if(horaStart == false && IT.triggerHora == true)
+        if (horaStart == false && IT.triggerHora == true)
         {
-            GameObject enemyLeft = Instantiate(
-            hora,
-            horaPosition,
-            Quaternion.Euler(0f, 0f, 0f),
-            transform);
+            enemyLeft = Instantiate(
+           hora,
+           horaPosition,
+           Quaternion.Euler(0f, 0f, 0f),
+           transform);
 
             ieleleSong = GetComponent<AudioSource>();
             ieleleSong.Play(0);
@@ -43,6 +45,26 @@ public class Ielele_SceneManager : MonoBehaviour
 
     }
 
+
+
+    [SerializeField] private ParticleSystem endPoint;
+    [SerializeField] private EventCollider endPointCollider;
+
+
+    public void onFinishIelele()
+    {
+        Destroy(enemyLeft);
+        endPointCollider.action += LeaveMap;
+    }
+
+
+    private void LeaveMap(Collider other)
+    {
+        if (other.tag == "Animal")
+        {
+            GameManager.instance.GoToScene(GameScenes.Calusari);
+        }
+    }
 
 
 
