@@ -93,7 +93,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2173394735687299809, guid: d984bca7d178d4e4da26ea32037e7507, type: 3}
       propertyPath: m_Name
-      value: BattleCard
+      value: BattleCard-Basil
+      objectReference: {fileID: 0}
+    - target: {fileID: 6611222340053370574, guid: d984bca7d178d4e4da26ea32037e7507, type: 3}
+      propertyPath: Item
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d984bca7d178d4e4da26ea32037e7507, type: 3}

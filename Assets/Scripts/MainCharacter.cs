@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Utils.GenericSingletons;
 
-public class MainCharacter : MonoBehaviour
+public class MainCharacter : MonoBehaviourSingleton<MainCharacter>
 {
     private float _startingHealth = 100;
     private float _currentHealth;
@@ -21,6 +20,9 @@ public class MainCharacter : MonoBehaviour
     private void Update()
     {
         _slider.transform.LookAt(Camera.main.transform);
+
+
+        Debug.DrawRay(transform.position, transform.forward * 4.2f, Color.red);
     }
 
     public void TakeDamage(float amount)
@@ -32,6 +34,29 @@ public class MainCharacter : MonoBehaviour
         if (_currentHealth <= 0)
         {
             GameManager.instance.LoseGame();
+        }
+    }
+
+    public void ToggleAbilityItem(Items item)
+    {
+        switch (item)
+        {
+            case Items.Sword:
+            case Items.Bow:
+                //show range
+                break;
+
+            case Items.Basil:
+            case Items.Beads:
+            case Items.Flute:
+            case Items.Garlic:
+            case Items.WormWood:
+            case Items.IE:
+                //Hide range
+                break;
+
+            default:
+                break;
         }
     }
 }
