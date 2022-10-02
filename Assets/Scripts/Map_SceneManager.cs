@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class Map_SceneManager : MonoBehaviour
 {
@@ -59,19 +60,28 @@ public class Map_SceneManager : MonoBehaviour
         if (GamePersistance.finishedKnightScene)
         {
             DisplayX_Icon(KnightLevel);
+            KnightLevel.GetComponent<Button>().interactable = false;
+
             PulseTransform(IeleleLevel.transform);
             IeleleLevel.GetComponent<InteractableButton_map>().SetButtonTo(MapButtonState.Normal);
+            IeleleLevel.GetComponent<Button>().interactable = true;
         }
         else if (GamePersistance.finishedIeleleScene)
         {
             DisplayX_Icon(KnightLevel);
             DisplayX_Icon(IeleleLevel);
+            KnightLevel.GetComponent<Button>().interactable = false;
+            IeleleLevel.GetComponent<Button>().interactable = false;
+
             PulseTransform(endingLevel.transform);
             endingLevel.GetComponent<InteractableButton_map>().SetButtonTo(MapButtonState.Normal);
+            endingLevel.GetComponent<Button>().interactable = true;
+
         }
         else
         {
             PulseTransform(KnightLevel.transform);
+            KnightLevel.GetComponent<Button>().interactable = true;
         }
 
     }
@@ -89,26 +99,34 @@ public class Map_SceneManager : MonoBehaviour
 
     public void GoToIelele()
     {
-        if (PersistanceItems.CheckIfItemsEmpty())
+        if (GamePersistance.finishedIeleleScene == false && GamePersistance.finishedKnightScene)
         {
-            helper_NoItems.SetActive(true);
+            if (PersistanceItems.CheckIfItemsEmpty())
+            {
+                helper_NoItems.SetActive(true);
+            }
+            else
+            {
+                GameManager.instance.GoToScene(GameScenes.IELELE);
+            }
         }
-        else
-        {
-            GameManager.instance.GoToScene(GameScenes.IELELE);
-        }
+
     }
 
     public void GoToKnight()
     {
-        if (PersistanceItems.CheckIfItemsEmpty())
+        if (GamePersistance.finishedKnightScene == false)
         {
-            helper_NoItems.SetActive(true);
+            if (PersistanceItems.CheckIfItemsEmpty())
+            {
+                helper_NoItems.SetActive(true);
+            }
+            else
+            {
+                GameManager.instance.GoToScene(GameScenes.KnighScene);
+            }
         }
-        else
-        {
-            GameManager.instance.GoToScene(GameScenes.IELELE);
-        }
+
     }
 
     public void itemHelp()

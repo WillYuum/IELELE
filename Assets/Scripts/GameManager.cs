@@ -29,10 +29,10 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
         switch (scene)
         {
             case GameScenes.KnighScene:
-                SceneManager.LoadScene("Knight_Scene");
+                SceneManager.LoadScene("Trial1_2_Knight_Scene");
                 break;
             case GameScenes.IELELE:
-                SceneManager.LoadScene("IELELE_Scene");
+                SceneManager.LoadScene("Trial2_2_Ielele_Middle_Scene");
                 break;
             case GameScenes.Map:
                 SceneManager.LoadScene("Map_Scene");

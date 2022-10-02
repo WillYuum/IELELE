@@ -3520,7 +3520,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1737181468}
         m_TargetAssemblyTypeName: Map_SceneManager, Assembly-CSharp
-        m_MethodName: itemHelp
+        m_MethodName: GoToKnight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
