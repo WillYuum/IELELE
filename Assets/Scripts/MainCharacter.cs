@@ -37,12 +37,22 @@ public class MainCharacter : MonoBehaviourSingleton<MainCharacter>
         }
     }
 
+
+
+    [SerializeField] private GameObject _smallRange;
+    [SerializeField] private GameObject _largeRange;
     public void ToggleAbilityItem(Items item)
     {
+        _smallRange.SetActive(false);
+        _largeRange.SetActive(false);
+
         switch (item)
         {
             case Items.Sword:
+                _smallRange.SetActive(true);
+                break;
             case Items.Bow:
+                _largeRange.SetActive(true);
                 //show range
                 break;
 
