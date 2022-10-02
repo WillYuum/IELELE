@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
         PersistanceItems.ResetProps();
 
         ShowLoseScreen();
-        Invoke(nameof(RestartGame), 1.0f);
+        // Invoke(nameof(RestartGame), 1.0f);
     }
 
     private void ShowLoseScreen()
@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
         SceneManager.LoadScene("LoseScreen", LoadSceneMode.Additive);
     }
 
-    private void RestartGame()
+    public void RestartGame()
     {
         Time.timeScale = 1;
 
