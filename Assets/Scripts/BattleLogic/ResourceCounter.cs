@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -42,11 +43,70 @@ public class ResourceCounter : MonoBehaviour
         {
             RemoveResourceCount(energyCost);
 
+            // var knight = GameObject.FindGameObjectsWithTag("Enemy");
+            // var ielele = GameObject.FindGameObjectsWithTag("Enemy");
+
+            void DoSomethingOn(Action actionOnKnight, Action actionOnIelele)
+            {
+                var knight = GameObject.FindGameObjectsWithTag("Enemy");
+                var ielele = GameObject.FindGameObjectsWithTag("Enemy");
+
+                if (knight != null)
+                {
+                    actionOnKnight.Invoke();
+                }
+                else
+                {
+                    actionOnIelele.Invoke();
+                }
+            };
+
+            print("CLicked on " + item);
             switch (item)
             {
                 case Items.Sword:
-                case Items.Bow:
+                    DoSomethingOn(() =>
+                    {
+                        var knight = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Knight>();
+                        Vector3 distBtweenMainCharacterAndKnight = knight.transform.position - MainCharacter.instance.transform.position;
 
+                        if (distBtweenMainCharacterAndKnight.magnitude < 4.2f)
+                        {
+                            knight.TakeDamage(40);
+                        }
+                    }, () =>
+                    {
+                        var ielele = GameObject.FindGameObjectWithTag("Enemy").GetComponent<IELELE>();
+                        Vector3 distBtweenMainCharacterAndKnight = ielele.transform.position - MainCharacter.instance.transform.position;
+
+                        if (distBtweenMainCharacterAndKnight.magnitude < 4.2f)
+                        {
+                            ielele.GetStunned();
+                        }
+                    });
+                    break;
+
+                case Items.Bow:
+                    DoSomethingOn(() =>
+                    {
+                        var knight = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Knight>();
+                        Vector3 distBtweenMainCharacterAndKnight = knight.transform.position - MainCharacter.instance.transform.position;
+
+                        if (distBtweenMainCharacterAndKnight.magnitude < 4.2f * 1.85f)
+                        {
+                            knight.TakeDamage(50);
+                        }
+                    }, () =>
+                    {
+                        var ielele = GameObject.FindGameObjectWithTag("Enemy").GetComponent<IELELE>();
+                        Vector3 distBtweenMainCharacterAndKnight = ielele.transform.position - MainCharacter.instance.transform.position;
+
+                        if (distBtweenMainCharacterAndKnight.magnitude < 4.2f * 1.85f)
+                        {
+                            ielele.GetStunned();
+                        }
+                    });
+                    //show range
                     break;
 
                 case Items.Basil:
@@ -56,6 +116,9 @@ public class ResourceCounter : MonoBehaviour
                 case Items.WormWood:
                 case Items.IE:
                     //Hide range
+
+
+
                     break;
 
                 default:
@@ -73,55 +136,6 @@ public class ResourceCounter : MonoBehaviour
     private void OnHoverBattleCard(Items item)
     {
         MainCharacter.instance.ToggleAbilityItem(item);
-    }
-
-    private void OnClickBattleCard(Items item)
-    {
-        switch (item)
-        {
-            case Items.Sword:
-                {
-                    Physics.SphereCast(transform.position, 4.2f, transform.forward, out RaycastHit pew, 4.2f);
-                    if (pew.collider.gameObject.TryGetComponent(out Knight knight))
-                    {
-                        knight.TakeDamage(50);
-                    }
-                    else if (pew.collider.gameObject.TryGetComponent(out IELELE ielele))
-                    {
-                        pew.collider.GetComponent<IELELE>().GetStunned();
-                    }
-                }
-                break;
-
-            case Items.Bow:
-                float range = 4.2f * 1.8f;
-                Physics.SphereCast(transform.position, range, transform.forward, out RaycastHit hit, range);
-                if (hit.collider != null)
-                {
-                    if (hit.collider.gameObject.TryGetComponent(out Knight knight))
-                    {
-                        knight.TakeDamage(50);
-                    }
-                    else if (hit.collider.gameObject.TryGetComponent(out IELELE ielele))
-                    {
-                        hit.collider.GetComponent<IELELE>().GetStunned();
-                    }
-                }
-                //show range
-                break;
-
-            case Items.Basil:
-            case Items.Beads:
-            case Items.Flute:
-            case Items.Garlic:
-            case Items.WormWood:
-            case Items.IE:
-                //Hide range
-                break;
-
-            default:
-                break;
-        }
     }
 
     void Update()

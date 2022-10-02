@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Knight : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class Knight : MonoBehaviour
     [SerializeField] private float _attackCooldownPerSec = 2;
     private float _attackCooldownTimer = 0;
 
+    [SerializeField] private Slider _healthSlider;
+
 
     [SerializeField] private float _damageToInflict = 20;
 
@@ -32,11 +35,13 @@ public class Knight : MonoBehaviour
         }
 
         _attackCooldownTimer = 0;
+        _healthSlider.value = _currentHealth / _startingHealth;
     }
 
     private void Update()
     {
         AttackPlayer();
+        _healthSlider.transform.LookAt(Camera.main.transform);
     }
 
 
@@ -101,7 +106,11 @@ public class Knight : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
+        print("Knight take damage");
+
         _currentHealth -= amount;
+
+        _healthSlider.value = _currentHealth / _startingHealth;
 
         if (_currentHealth <= 0)
         {

@@ -10,6 +10,7 @@ TagManager:
   - Fly
   - Animal
   - Water
+  - Enemy
   layers:
   - Default
   - TransparentFX
