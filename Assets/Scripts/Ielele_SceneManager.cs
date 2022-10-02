@@ -7,6 +7,8 @@ public class Ielele_SceneManager : MonoBehaviour
     [SerializeField] GameObject hora;
     [SerializeField] Ielele_Trigger IT;
 
+    AudioSource ieleleSong;
+
     private Vector3 horaPosition;
 
     private bool horaStart;
@@ -29,6 +31,9 @@ public class Ielele_SceneManager : MonoBehaviour
             horaPosition,
             Quaternion.Euler(0f, 0f, 0f),
             transform);
+
+            ieleleSong = GetComponent<AudioSource>();
+            ieleleSong.Play(0);
 
 
             horaStart = true;
