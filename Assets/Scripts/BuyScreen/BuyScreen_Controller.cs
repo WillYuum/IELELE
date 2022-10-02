@@ -60,7 +60,7 @@ public class BuyScreen_Controller : MonoBehaviour
     }
 
 
-    [SerializeField] private int _startingCoin = 250;
+    [SerializeField] private int _holdingCoin = 250;
     [SerializeField] private TextMeshProUGUI _coinIndicator;
     [SerializeField] private Indicator[] _indicators;
 
@@ -71,7 +71,8 @@ public class BuyScreen_Controller : MonoBehaviour
 
     private void Awake()
     {
-        _coinIndicator.text = _startingCoin.ToString();
+        _holdingCoin = GamePersistance.coins;
+        _coinIndicator.text = _holdingCoin.ToString();
 
         foreach (var item in _indicators)
         {
@@ -83,12 +84,22 @@ public class BuyScreen_Controller : MonoBehaviour
         {
             card.AddClickListeners(OnBuyItem);
         }
+
+        foreach (var card in _cards)
+        {
+            if (PersistanceItems.CheckIfBoughtItem(card._item))
+            {
+                card.HightlightCard();
+            }
+        }
+
+        UpdateAmounts();
     }
 
 
     private void OnBuyItem(int cost, Items item)
     {
-        if (_startingCoin >= cost)
+        if (_holdingCoin >= cost)
         {
             switch (item)
             {
@@ -96,7 +107,7 @@ public class BuyScreen_Controller : MonoBehaviour
                 case Items.Water:
                     PersistanceItems.BuyItems(item, 5);
                     // GameManager.instance.CollectedItems.BuyItem(item, 5);
-                    _startingCoin -= cost;
+                    _holdingCoin -= cost;
                     UpdateAmounts();
 
                     break;
@@ -108,13 +119,13 @@ public class BuyScreen_Controller : MonoBehaviour
                     {
                         //They;re a boolean
                         PersistanceItems.BuyItems(item, 0);
-                        _startingCoin -= cost;
+                        _holdingCoin -= cost;
                     }
                     // GameManager.instance.CollectedItems.AddNonFoodWaterITems(item);
                     break;
             }
 
-            _coinIndicator.text = _startingCoin.ToString();
+            _coinIndicator.text = _holdingCoin.ToString();
             // GameManager.instance.CollectedItems.BuyItem(item, 1);
         }
     }
@@ -123,8 +134,8 @@ public class BuyScreen_Controller : MonoBehaviour
     {
         if (PersistanceItems.CheckIfBoughtItem(item))
         {
-            _startingCoin += cost;
-            _coinIndicator.text = _startingCoin.ToString();
+            _holdingCoin += cost;
+            _coinIndicator.text = _holdingCoin.ToString();
             // GameManager.instance.CollectedItems.decrement(item, 1);
             PersistanceItems.RemoveItem(item);
             UpdateAmounts();
@@ -149,6 +160,7 @@ public class BuyScreen_Controller : MonoBehaviour
             return;
         }
 
+        GamePersistance.coins = _holdingCoin;
         GameManager.instance.GoToScene(GameScenes.Map);
     }
 

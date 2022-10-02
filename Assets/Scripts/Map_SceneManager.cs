@@ -87,12 +87,32 @@ public class Map_SceneManager : MonoBehaviour
         initalNarative.SetActive(false);
     }
 
-    public void itemHelp()
+    public void GoToIelele()
     {
-        if (itemCount == 0)
+        if (PersistanceItems.CheckIfItemsEmpty())
         {
             helper_NoItems.SetActive(true);
         }
+        else
+        {
+            GameManager.instance.GoToScene(GameScenes.IELELE);
+        }
+    }
+
+    public void GoToKnight()
+    {
+        if (PersistanceItems.CheckIfItemsEmpty())
+        {
+            helper_NoItems.SetActive(true);
+        }
+        else
+        {
+            GameManager.instance.GoToScene(GameScenes.IELELE);
+        }
+    }
+
+    public void itemHelp()
+    {
 
     }
 

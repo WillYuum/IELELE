@@ -270,6 +270,7 @@ public static class PersistanceItems
 
 public static class GamePersistance
 {
-    public static bool finishedKnightScene = true;
+    public static int coins = 250;
+    public static bool finishedKnightScene = false;
     public static bool finishedIeleleScene = false;
 }

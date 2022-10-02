@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class BuyCard : MonoBehaviour
 {
-    [SerializeField] private Items _item;
+    [SerializeField] public Items _item;
 
     [SerializeField] private TextMeshProUGUI _costIndicator;
     [SerializeField] private TextMeshProUGUI _energyIndicator;
@@ -48,7 +48,7 @@ public class BuyCard : MonoBehaviour
         });
     }
 
-    private void HightlightCard()
+    public void HightlightCard()
     {
         highlight.SetActive(true);
     }
