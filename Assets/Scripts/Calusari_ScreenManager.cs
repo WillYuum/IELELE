@@ -7,7 +7,9 @@ public class Calusari_ScreenManager : MonoBehaviour
     [SerializeField] GameObject calusari;
     [SerializeField] Calusari_Trigger CT;
 
-    AudioSource calusariSong;
+    public GameObject calusariBand;
+
+    public AudioSource calusariSong;
 
     private Vector3 calusariPosition;
 
@@ -27,7 +29,7 @@ public class Calusari_ScreenManager : MonoBehaviour
     {
         if (calusariStart == false && CT.triggerCalusari == true)
         {
-            GameObject enemyLeft = Instantiate(
+            calusariBand = Instantiate(
             calusari,
             calusariPosition,
             Quaternion.Euler(0f, 0f, 0f),
