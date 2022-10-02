@@ -2,51 +2,126 @@ using UnityEngine;
 
 public class BoughtItems
 {
-    public int Sword = 0;
-    public int Bow = 0;
-    public int Ie = 0;
-    public int Garlic = 0;
-    public int Flute = 0;
-    public int Basil = 0;
-    public int WormWood = 0;
+    public bool Sword = false;
+    public bool Bow = false;
+    public bool Ie = false;
+    public bool Garlic = false;
+    public bool Flute = false;
+    public bool Basil = false;
+    public bool WormWood = false;
     public int Food = 0;
     public int Water = 0;
-    public int Beads = 0;
+    public bool Beads = false;
 
     public bool CheckIfItemsEmpty()
     {
-        if (Sword == 0 && Bow == 0 && Ie == 0 && Garlic == 0 && Flute == 0 && Basil == 0 && WormWood == 0 && Food == 0 && Water == 0 && Beads == 0)
+        if (Sword == false && Bow == false && Ie == false && Garlic == false && Flute == false && Basil == false && WormWood == false && Food > 0 && Water > 0 && Beads == false)
         {
             return true;
         }
-        return false;
+        else
+        {
+            return false;
+        }
     }
 
-
-    public void increment(Items item, int amount)
+    public void AddNonFoodWaterITems(Items item)
     {
         switch (item)
         {
             case Items.Sword:
-                Sword += amount;
+                Sword = true;
                 break;
             case Items.Bow:
-                Bow += amount;
+                Bow = true;
                 break;
             case Items.IE:
-                Ie += amount;
+                Ie = true;
                 break;
             case Items.Garlic:
-                Garlic += amount;
+                Garlic = true;
                 break;
             case Items.Flute:
-                Flute += amount;
+                Flute = true;
                 break;
             case Items.Basil:
-                Basil += amount;
+                Basil = true;
                 break;
             case Items.WormWood:
-                WormWood += amount;
+                WormWood = true;
+                break;
+            case Items.Beads:
+                Beads = true;
+                break;
+            default:
+                break;
+        }
+    }
+
+    public bool CheckIfBoughtItem(Items item)
+    {
+        switch (item)
+        {
+            case Items.Sword:
+                return true;
+
+            case Items.Bow:
+                return true;
+
+            case Items.IE:
+                return true;
+
+            case Items.Garlic:
+                return true;
+
+            case Items.Flute:
+                return true;
+
+            case Items.Basil:
+                return true;
+
+            case Items.WormWood:
+                return true;
+
+            case Items.Food:
+                return Food > 0;
+
+            case Items.Water:
+                return Water > 0;
+
+            case Items.Beads:
+                return true;
+
+            default:
+                return false;
+        }
+    }
+
+
+    public void BuyItem(Items item, int amount)
+    {
+        switch (item)
+        {
+            case Items.Sword:
+                Sword = true;
+                break;
+            case Items.Bow:
+                Bow = true;
+                break;
+            case Items.IE:
+                Ie = true;
+                break;
+            case Items.Garlic:
+                Garlic = true;
+                break;
+            case Items.Flute:
+                Flute = true;
+                break;
+            case Items.Basil:
+                Basil = true;
+                break;
+            case Items.WormWood:
+                WormWood = true;
                 break;
             case Items.Food:
                 Food += amount;
@@ -55,7 +130,7 @@ public class BoughtItems
                 Water += amount;
                 break;
             case Items.Beads:
-                Beads += amount;
+                Beads = true;
                 break;
             default:
                 break;
@@ -66,35 +141,11 @@ public class BoughtItems
     {
         switch (item)
         {
-            case Items.Sword:
-                Sword -= amount;
-                break;
-            case Items.Bow:
-                Bow -= amount;
-                break;
-            case Items.IE:
-                Ie -= amount;
-                break;
-            case Items.Garlic:
-                Garlic -= amount;
-                break;
-            case Items.Flute:
-                Flute -= amount;
-                break;
-            case Items.Basil:
-                Basil -= amount;
-                break;
-            case Items.WormWood:
-                WormWood -= amount;
-                break;
             case Items.Food:
                 Food -= amount;
                 break;
             case Items.Water:
                 Water -= amount;
-                break;
-            case Items.Beads:
-                Beads -= amount;
                 break;
             default:
                 break;
@@ -106,26 +157,10 @@ public class BoughtItems
     {
         switch (item)
         {
-            case Items.Sword:
-                return Sword;
-            case Items.Bow:
-                return Bow;
-            case Items.IE:
-                return Ie;
-            case Items.Garlic:
-                return Garlic;
-            case Items.Flute:
-                return Flute;
-            case Items.Basil:
-                return Basil;
-            case Items.WormWood:
-                return WormWood;
             case Items.Food:
                 return Food;
             case Items.Water:
                 return Water;
-            case Items.Beads:
-                return Beads;
             default:
                 Debug.LogError("Item not found");
                 return 0;

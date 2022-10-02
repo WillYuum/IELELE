@@ -17,7 +17,7 @@ public class Map_SceneManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
         initalNarative.SetActive(true);
 
         DOTween.Sequence()
@@ -30,7 +30,7 @@ public class Map_SceneManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void nextInitial()
@@ -40,11 +40,16 @@ public class Map_SceneManager : MonoBehaviour
 
     public void itemHelp()
     {
-        if(itemCount == 0)
+        if (itemCount == 0)
         {
             helper_NoItems.SetActive(true);
         }
-        
+
+    }
+
+    public void OpenInventory()
+    {
+        GameManager.instance.GoToScene(GameScenes.BuyScreen);
     }
 
     public void itemHelp_Back()

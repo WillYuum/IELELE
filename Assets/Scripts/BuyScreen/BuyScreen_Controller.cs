@@ -88,11 +88,22 @@ public class BuyScreen_Controller : MonoBehaviour
 
     private void OnBuyItem(int cost, Items item)
     {
+        switch (item)
+        {
+            case Items.Food:
+            case Items.Water:
+                GameManager.instance.CollectedItems.BuyItem(item, 5);
+                break;
+            default:
+                GameManager.instance.CollectedItems.AddNonFoodWaterITems(item);
+                break;
+        }
+
         if (_startingCoin >= cost)
         {
             _startingCoin -= cost;
             _coinIndicator.text = _startingCoin.ToString();
-            GameManager.instance.CollectedItems.increment(item, 1);
+            GameManager.instance.CollectedItems.BuyItem(item, 1);
             UpdateAmounts();
         }
     }
