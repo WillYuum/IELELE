@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
     {
         Time.timeScale = 1;
 
-        GoToScene(GameScenes.BuyScreen);
+        GoToScene(GameScenes.Menu);
     }
 
 }

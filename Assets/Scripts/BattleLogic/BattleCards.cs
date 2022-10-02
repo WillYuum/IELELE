@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class BattleCards : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -76,12 +77,18 @@ public class BattleCards : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
         Debug.Log("Mouse enter");
         OnHoverButton.Invoke(Item);
+
+        //Scale up with tween
+        transform.DOScale(1.1f, 0.2f);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         Debug.Log("Mouse exit");
         _onLeave.Invoke();
+
+        //Scale down with tween
+        transform.DOScale(1f, 0.2f);
 
     }
 }
